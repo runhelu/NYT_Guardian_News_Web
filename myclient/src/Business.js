@@ -42,10 +42,10 @@ class Business extends React.Component{
     this.setState({loading: true,});
     document.getElementsByClassName("loading")[0].style.display = '';
     if(!this.state.checked){
-      url = '/api/NYBusiness';
+      url = 'http://ec2-52-87-202-44.compute-1.amazonaws.com:4000/api/NYBusiness';
     }
     else{
-      url = '/api/GuardianBusiness';
+      url = 'http://ec2-52-87-202-44.compute-1.amazonaws.com:4000/api/GuardianBusiness';
     }
     fetch(url, {mode: 'cors'}).then(
       (response) =>{
@@ -54,7 +54,7 @@ class Business extends React.Component{
     ).then(
       (res) => {
         let data = [];
-        if(url === '/api/NYBusiness'){
+        if(url === 'http://ec2-52-87-202-44.compute-1.amazonaws.com:4000/api/NYBusiness'){
           data = res.results;
         }
         else{
@@ -85,7 +85,7 @@ class Business extends React.Component{
     if(window.localStorage.getItem('checking') === 'false'){//NYTimes
       let url = "";
       this.setState({loading: true,});
-      url = '/api/NYBusiness';
+      url = 'http://ec2-52-87-202-44.compute-1.amazonaws.com:4000/api/NYBusiness';
       fetch(url, {mode: 'cors'}).then(
         (response) =>{
           return response.json();
@@ -101,7 +101,7 @@ class Business extends React.Component{
     else{//Guardian
       let url = "";
       this.setState({loading: true,});
-      url = '/api/GuardianBusiness';
+      url = 'http://ec2-52-87-202-44.compute-1.amazonaws.com:4000/api/GuardianBusiness';
       fetch(url, {mode: 'cors'}).then(
         (response) =>{
           return response.json();

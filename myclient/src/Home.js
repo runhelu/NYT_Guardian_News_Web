@@ -42,10 +42,10 @@ class Home extends React.Component{
     this.setState({loading: true,});
     document.getElementsByClassName("loading")[0].style.display = '';
     if(!this.state.checked){
-      url = '/api/homeNY';
+      url = 'http://ec2-52-87-202-44.compute-1.amazonaws.com:4000/api/homeNY';
     }
     else{
-      url = '/api/homeGuardian';
+      url = 'http://ec2-52-87-202-44.compute-1.amazonaws.com:4000/api/homeGuardian';
     }
     fetch(url, {mode: 'cors'}).then(
       (response) =>{
@@ -54,7 +54,7 @@ class Home extends React.Component{
     ).then(
       (res) => {
         let data = [];
-        if(url === '/api/homeNY'){
+        if(url === 'http://ec2-52-87-202-44.compute-1.amazonaws.com:4000/api/homeNY'){
           data = res.results;
         }
         else{
@@ -85,7 +85,7 @@ class Home extends React.Component{
     if(window.localStorage.getItem('checking') === 'false'){//NYTimes
       let url = "";
       this.setState({loading: true,});
-      url = '/api/homeNY';
+      url = 'http://ec2-52-87-202-44.compute-1.amazonaws.com:4000/api/homeNY';
       fetch(url, {mode: 'cors'}).then(
         (response) =>{
           return response.json();
@@ -102,7 +102,7 @@ class Home extends React.Component{
     else{//Guardian
       let url = "";
       this.setState({loading: true,});
-      url = '/api/homeGuardian';
+      url = 'http://ec2-52-87-202-44.compute-1.amazonaws.com:4000/api/homeGuardian';
       fetch(url, {mode: 'cors'}).then(
         (response) =>{
           return response.json();

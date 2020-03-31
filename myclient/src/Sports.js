@@ -43,10 +43,10 @@ class Sports extends React.Component{
     this.setState({loading: true,});
     document.getElementsByClassName("loading")[0].style.display = '';
     if(!this.state.checked){
-      url = '/api/NYSports';
+      url = 'http://ec2-52-87-202-44.compute-1.amazonaws.com:4000/api/NYSports';
     }
     else{
-      url = '/api/GuardianSports';
+      url = 'http://ec2-52-87-202-44.compute-1.amazonaws.com:4000/api/GuardianSports';
     }
     fetch(url, {mode: 'cors'}).then(
       (response) =>{
@@ -55,7 +55,7 @@ class Sports extends React.Component{
     ).then(
       (res) => {
         let data = [];
-        if(url === '/api/NYSports'){
+        if(url === 'http://ec2-52-87-202-44.compute-1.amazonaws.com:4000/api/NYSports'){
           data = res.results;
         }
         else{
@@ -86,7 +86,7 @@ class Sports extends React.Component{
     if(window.localStorage.getItem('checking') === 'false'){//NYTimes
       let url = "";
       this.setState({loading: true,});
-      url = '/api/NYSports';
+      url = 'http://ec2-52-87-202-44.compute-1.amazonaws.com:4000/api/NYSports';
       fetch(url, {mode: 'cors'}).then(
         (response) =>{
           return response.json();
@@ -102,7 +102,7 @@ class Sports extends React.Component{
     else{//Guardian
       let url = "";
       this.setState({loading: true,});
-      url = '/api/GuardianSports';
+      url = 'http://ec2-52-87-202-44.compute-1.amazonaws.com:4000/api/GuardianSports';
       fetch(url, {mode: 'cors'}).then(
         (response) =>{
           return response.json();
