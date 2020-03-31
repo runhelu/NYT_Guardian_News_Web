@@ -61,12 +61,10 @@ class Article extends React.Component{
   }
 
   componentDidMount(){
-    const contentDiv = document.getElementsByClassName('article-des-small')[0];
+    
     document.getElementsByClassName('article-des-big')[0].style.display = 'none';
-    const style = window.getComputedStyle(contentDiv, null);
-    const height = parseInt(style.height, 10);
-    const lineHeight = parseInt(style.lineHeight, 10);
-    if(height / lineHeight >= 4){
+    
+    if(document.getElementsByClassName('article-des-small')[0].scrollHeight !== document.getElementsByClassName('article-des-small')[0].clientHeight){
       document.getElementById('toBottom').style.display = '';
     }
     else{

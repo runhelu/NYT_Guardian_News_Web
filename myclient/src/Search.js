@@ -40,7 +40,7 @@ class Search extends React.Component{
     let keyword = encodeURI(this.state.keyWord);
     document.getElementsByClassName("loading")[0].style.display = '';
 		let news = this.state.newsPaper;
-		let url = "http://ec2-52-87-202-44.compute-1.amazonaws.com:4000/api/search?keyword=" + keyword + "&news=" + news;
+		let url = "ec2-54-89-99-60.compute-1.amazonaws.com:4000/api/search?keyword=" + keyword + "&news=" + news;
 		fetch(url, {mode: 'cors'}).then(
 			(response) => {
 				return response.json();

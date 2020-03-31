@@ -31,7 +31,7 @@ class DetailArticle extends React.Component{
   }
 
   componentDidMount(){
-    let url = 'http://ec2-52-87-202-44.compute-1.amazonaws.com:4000/api/detail?id=' + this.state.id + "&news=" + this.state.newsPaper;
+    let url = 'ec2-54-89-99-60.compute-1.amazonaws.com:4000/api/detail?id=' + this.state.id + "&news=" + this.state.newsPaper;
     this.setState({loading: true,});
     document.getElementsByClassName("loading")[0].style.display = '';
     fetch(url, {mode: 'cors'}).then(

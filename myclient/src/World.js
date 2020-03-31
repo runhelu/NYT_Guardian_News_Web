@@ -42,10 +42,10 @@ class World extends React.Component{
     this.setState({loading: true,});
     document.getElementsByClassName("loading")[0].style.display = '';
     if(!this.state.checked){
-      url = 'http://ec2-52-87-202-44.compute-1.amazonaws.com:4000/api/NYWorld';
+      url = 'ec2-54-89-99-60.compute-1.amazonaws.com:4000/api/NYWorld';
     }
     else{
-      url = 'http://ec2-52-87-202-44.compute-1.amazonaws.com:4000/api/GuardianWorld';
+      url = 'ec2-54-89-99-60.compute-1.amazonaws.com:4000/api/GuardianWorld';
     }
     fetch(url, {mode: 'cors'}).then(
       (response) =>{
@@ -54,7 +54,7 @@ class World extends React.Component{
     ).then(
       (res) => {
         let data = [];
-        if(url === 'http://ec2-52-87-202-44.compute-1.amazonaws.com:4000/api/NYWorld'){
+        if(url === 'ec2-54-89-99-60.compute-1.amazonaws.com:4000/api/NYWorld'){
           data = res.results;
         }
         else{
@@ -85,7 +85,7 @@ class World extends React.Component{
     if(window.localStorage.getItem('checking') === 'false'){//NYTimes
       let url = "";
       this.setState({loading: true,});
-      url = 'http://ec2-52-87-202-44.compute-1.amazonaws.com:4000/api/NYWorld';
+      url = 'ec2-54-89-99-60.compute-1.amazonaws.com:4000/api/NYWorld';
       fetch(url, {mode: 'cors'}).then(
         (response) =>{
           return response.json();
@@ -101,7 +101,7 @@ class World extends React.Component{
     else{//Guardian
       let url = "";
       this.setState({loading: true,});
-      url = 'http://ec2-52-87-202-44.compute-1.amazonaws.com:4000/api/GuardianWorld';
+      url = 'ec2-54-89-99-60.compute-1.amazonaws.com:4000/api/GuardianWorld';
       fetch(url, {mode: 'cors'}).then(
         (response) =>{
           return response.json();
