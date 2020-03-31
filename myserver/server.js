@@ -3,7 +3,7 @@ const cors = require('cors');
 var app = express();
 app.use(cors(
   {
-    origin: ['http://localhost:3000', 'http://ec2-54-89-99-60-compute-1.amazonaws.com:3000'],
+    origin: ['http://localhost:3000', 'http://ec2-54-89-99-60.compute-1.amazonaws.com:3000'],
   }
 )); 
 

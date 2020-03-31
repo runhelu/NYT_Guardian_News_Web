@@ -47,5 +47,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "ec2-52-87-202-44.compute-1.amazonaws.com:4000"
+  "proxy": "http://ec2-54-89-99-60.compute-1.amazonaws.com:4000"
 }
