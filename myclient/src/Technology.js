@@ -42,10 +42,10 @@ class Technology extends React.Component{
     this.setState({loading: true,});
     document.getElementsByClassName("loading")[0].style.display = '';
     if(!this.state.checked){
-      url = 'ec2-54-89-99-60.compute-1.amazonaws.com:4000/api/NYTechnology';
+      url = 'http://ec2-54-89-99-60.compute-1.amazonaws.com:4000/api/NYTechnology';
     }
     else{
-      url = 'ec2-54-89-99-60.compute-1.amazonaws.com:4000/api/GuardianTechnology';
+      url = 'http://ec2-54-89-99-60.compute-1.amazonaws.com:4000/api/GuardianTechnology';
     }
     fetch(url, {mode: 'cors'}).then(
       (response) =>{
@@ -54,7 +54,7 @@ class Technology extends React.Component{
     ).then(
       (res) => {
         let data = [];
-        if(url === 'ec2-54-89-99-60.compute-1.amazonaws.com:4000/api/NYTechnology'){
+        if(url === 'http://ec2-54-89-99-60.compute-1.amazonaws.com:4000/api/NYTechnology'){
           data = res.results;
         }
         else{
@@ -85,7 +85,7 @@ class Technology extends React.Component{
     if(window.localStorage.getItem('checking') === 'false'){//NYTimes
       let url = "";
       this.setState({loading: true,});
-      url = 'ec2-54-89-99-60.compute-1.amazonaws.com:4000/api/NYTechnology';
+      url = 'http://ec2-54-89-99-60.compute-1.amazonaws.com:4000/api/NYTechnology';
       fetch(url, {mode: 'cors'}).then(
         (response) =>{
           return response.json();
@@ -101,7 +101,7 @@ class Technology extends React.Component{
     else{//Guardian
       let url = "";
       this.setState({loading: true,});
-      url = 'ec2-54-89-99-60.compute-1.amazonaws.com:4000/api/GuardianTechnology';
+      url = 'http://ec2-54-89-99-60.compute-1.amazonaws.com:4000/api/GuardianTechnology';
       fetch(url, {mode: 'cors'}).then(
         (response) =>{
           return response.json();

@@ -43,10 +43,10 @@ class Politics extends React.Component{
     this.setState({loading: true,});
     document.getElementsByClassName("loading")[0].style.display = '';
     if(!this.state.checked){
-      url = 'ec2-54-89-99-60.compute-1.amazonaws.com:4000/api/NYPolitics';
+      url = 'http://ec2-54-89-99-60.compute-1.amazonaws.com:4000/api/NYPolitics';
     }
     else{
-      url = 'ec2-54-89-99-60.compute-1.amazonaws.com:4000/api/GuardianPolitics';
+      url = 'http://ec2-54-89-99-60.compute-1.amazonaws.com:4000/api/GuardianPolitics';
     }
     fetch(url, {mode: 'cors'}).then(
       (response) =>{
@@ -55,7 +55,7 @@ class Politics extends React.Component{
     ).then(
       (res) => {
         let data = [];
-        if(url === 'ec2-54-89-99-60.compute-1.amazonaws.com:4000/api/NYPolitics'){
+        if(url === 'http://ec2-54-89-99-60.compute-1.amazonaws.com:4000/api/NYPolitics'){
           data = res.results;
         }
         else{
@@ -86,7 +86,7 @@ class Politics extends React.Component{
     if(window.localStorage.getItem('checking') === 'false'){//NYTimes
       let url = "";
       this.setState({loading: true,});
-      url = 'ec2-54-89-99-60.compute-1.amazonaws.com:4000/api/NYPolitics';
+      url = 'http://ec2-54-89-99-60.compute-1.amazonaws.com:4000/api/NYPolitics';
       fetch(url, {mode: 'cors'}).then(
         (response) =>{
           return response.json();
@@ -102,7 +102,7 @@ class Politics extends React.Component{
     else{//Guardian
       let url = "";
       this.setState({loading: true,});
-      url = 'ec2-54-89-99-60.compute-1.amazonaws.com:4000/api/GuardianPolitics';
+      url = 'http://ec2-54-89-99-60.compute-1.amazonaws.com:4000/api/GuardianPolitics';
       fetch(url, {mode: 'cors'}).then(
         (response) =>{
           return response.json();
