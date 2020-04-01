@@ -22,6 +22,8 @@ To get started with the CommentBox.io API, visit: https://dashboard.commentbox.i
 
 Creat a project and enther localhost:3000 in the "web domain". This action makes commentBox.io working properly in your browser.
 
+![](./commentBoxDashboard.png)
+
 #### Check the website in your browser
 Open browser on localhost:3000
 
