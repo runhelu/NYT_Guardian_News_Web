@@ -7,6 +7,14 @@
 - Support autocomplete search and comment on each news.
 - Support saving favorite news and removing them.
 
+### Website overview
+
+#### Desktop
+
+![](./overView.png)
+
+#### Mobile
+![](./overViewResponsive.png)
 
 ### Test locally
 Go to the client repository: `cd dev/myclient`
@@ -29,7 +37,10 @@ Open browser on localhost:3000
 
 ### Deploy on Amazon EC2
 
-1. Create an EC2 instance, make sure open TCP connections on port 3000 and 4000.
+ 
+
+1. Create an EC2 instance, make sure open TCP connections on port 3000(frontend) and 4000(backend).
+Remember to edit all urls in `production/myserver/routers` to be your urls.
 2. Download pem file. 
 Run `chmod 400 [your pem file]` 
 Connect your EC2 instance using
