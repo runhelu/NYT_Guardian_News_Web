@@ -1,6 +1,7 @@
 var express = require('express');
 const cors = require('cors');
 var app = express();
+
 app.use(cors(
   {
     origin: ['http://localhost:3000'],
@@ -192,6 +193,35 @@ app.get('/api/GuardianSports', function(req, res){
   })
 });
 
+app.get('/api/GuardianScience', function(req, res){
+  let request = require('request');
+  request({
+    url: 'https://content.guardianapis.com/science?api-key=39659f23-1ee4-4ea2-a770-8c05f5f5b493&show-blocks=all',
+    headers: {
+      "content-type": "application/json",
+    },
+    json: true,
+  }, function(error, response, body){
+    if(!error && response.statusCode == 200){
+      res.json(body);
+    }
+  })
+});
+
+app.get('/api/trend', function(req, res){
+  let query = req.query.keyword;
+  let googleTrends = require('google-trends-api');
+  let date = new Date('2019-06-01');
+  let now = new Date(Date.now());
+  googleTrends.interestOverTime({
+    keyword: query, startTime: date, endTime: now
+  }).then(function(results){
+    return res.json(JSON.parse(results));
+  })
+})
+
+
+
 app.get('/api/search', function(req, res){
   let query = req.query.keyword;
   let news = req.query.news;
@@ -265,3 +295,4 @@ var server = app.listen(8080, function () {
   console.log("http://%s:%s", host, port)
  
 })
+
