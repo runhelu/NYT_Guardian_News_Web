@@ -1,7 +1,7 @@
 ## A news website based on React.js and Node.js 
 
 - Support switch from  top headlines for both New York Times and Guardian News.
-- Top-headlines  could  be  for  any  of  the following domains –world, politics, business, technology and sports.
+- Top-headlines  could  be  for  any  of  the following domains: world, politics, business, technology and sports.
 - Each such article can be shared by the user on Facebook, Twitter or via Email.
 - Support both desktop and mobile browsers.
 - Support autocomplete search and comment on each news.
